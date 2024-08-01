@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Bikal Ghimire">
+    <title>Bikal Ghimire</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo"><img src="logo.png"></a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#academics">Academics</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#skills-progress">Skills Proficiency</a></li>
+                <li><a href="#more-projects">Honors & Awards</a></li>
+                
+            </ul>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <button id="theme-toggle"><span id="theme-icon">☽</button>
+        </nav>
+    </header>
+
+    <main>
+        <style>
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white; /* Change this to match your site's background color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+          }
+          
+          .container {
+            --uib-size: 45px;
+            --uib-color: black;
+            --uib-speed: 2.5s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: var(--uib-size);
+            width: var(--uib-size);
+          }
+        
+          .slice {
+            position: relative;
+            height: calc(var(--uib-size) / 6);
+            width: 100%;
+          }
+        
+          .slice::before,
+          .slice::after {
+            --uib-a: calc(var(--uib-speed) / -2);
+            --uib-b: calc(var(--uib-speed) / -6);
+            content: '';
+            position: absolute;
+            top: 0;
+            left: calc(50% - var(--uib-size) / 12);
+            height: 100%;
+            width: calc(100% / 6);
+            border-radius: 50%;
+            background-color: var(--uib-color);
+            flex-shrink: 0;
+            animation: orbit var(--uib-speed) linear infinite;
+            transition: background-color 0.3s ease;
+          }
+        
+          .slice:nth-child(1)::after {
+            animation-delay: var(--uib-a);
+          }
+        
+          .slice:nth-child(2)::before {
+            animation-delay: var(--uib-b);
+          }
+        
+          .slice:nth-child(2)::after {
+            animation-delay: calc(var(--uib-a) + var(--uib-b));
+          }
+        
+          .slice:nth-child(3)::before {
+            animation-delay: calc(var(--uib-b) * 2);
+          }
+          .slice:nth-child(3)::after {
+            animation-delay: calc(var(--uib-a) + var(--uib-b) * 2);
+          }
+        
+          .slice:nth-child(4)::before {
+            animation-delay: calc(var(--uib-b) * 3);
+          }
+          .slice:nth-child(4)::after {
+            animation-delay: calc(var(--uib-a) + var(--uib-b) * 3);
+          }
+        
+          .slice:nth-child(5)::before {
+            animation-delay: calc(var(--uib-b) * 4);
+          }
+          .slice:nth-child(5)::after {
+            animation-delay: calc(var(--uib-a) + var(--uib-b) * 4);
+          }
+        
+          .slice:nth-child(6)::before {
+            animation-delay: calc(var(--uib-b) * 5);
+          }
+          .slice:nth-child(6)::after {
+            animation-delay: calc(var(--uib-a) + var(--uib-b) * 5);
+          }
+        
+          @keyframes orbit {
+            0% {
+              transform: translateX(calc(var(--uib-size) * 0.25)) scale(0.73684);
+              opacity: 0.65;
+            }
+            5% {
+              transform: translateX(calc(var(--uib-size) * 0.235)) scale(0.684208);
+              opacity: 0.58;
+            }
+            10% {
+              transform: translateX(calc(var(--uib-size) * 0.182)) scale(0.631576);
+              opacity: 0.51;
+            }
+            15% {
+              transform: translateX(calc(var(--uib-size) * 0.129)) scale(0.578944);
+              opacity: 0.44;
+            }
+            20% {
+              transform: translateX(calc(var(--uib-size) * 0.076)) scale(0.526312);
+              opacity: 0.37;
+            }
+            25% {
+              transform: translateX(0%) scale(0.47368);
+              opacity: 0.3;
+            }
+            30% {
+              transform: translateX(calc(var(--uib-size) * -0.076)) scale(0.526312);
+              opacity: 0.37;
+            }
+            35% {
+              transform: translateX(calc(var(--uib-size) * -0.129)) scale(0.578944);
+              opacity: 0.44;
+            }
+            40% {
+              transform: translateX(calc(var(--uib-size) * -0.182)) scale(0.631576);
+              opacity: 0.51;
+            }
+            45% {
+              transform: translateX(calc(var(--uib-size) * -0.235)) scale(0.684208);
+              opacity: 0.58;
+            }
+            50% {
+              transform: translateX(calc(var(--uib-size) * -0.25)) scale(0.73684);
+              opacity: 0.65;
+            }
+            55% {
+              transform: translateX(calc(var(--uib-size) * -0.235)) scale(0.789472);
+              opacity: 0.72;
+            }
+            60% {
+              transform: translateX(calc(var(--uib-size) * -0.182)) scale(0.842104);
+              opacity: 0.79;
+            }
+            65% {
+              transform: translateX(calc(var(--uib-size) * -0.129)) scale(0.894736);
+              opacity: 0.86;
+            }
+            70% {
+              transform: translateX(calc(var(--uib-size) * -0.076)) scale(0.947368);
+              opacity: 0.93;
+            }
+            75% {
+              transform: translateX(0%) scale(1);
+              opacity: 1;
+            }
+            80% {
+              transform: translateX(calc(var(--uib-size) * 0.076)) scale(0.947368);
+              opacity: 0.93;
+            }
+            85% {
+              transform: translateX(calc(var(--uib-size) * 0.129)) scale(0.894736);
+              opacity: 0.86;
+            }
+            90% {
+              transform: translateX(calc(var(--uib-size) * 0.182)) scale(0.842104);
+              opacity: 0.79;
+            }
+            95% {
+              transform: translateX(calc(var(--uib-size) * 0.235)) scale(0.789472);
+              opacity: 0.72;
+            }
+            100% {
+              transform: translateX(calc(var(--uib-size) * 0.25)) scale(0.73684);
+              opacity: 0.65;
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="preloader">
+          <div class="container">
+            <div class="slice"></div>
+            <div class="slice"></div>
+            <div class="slice"></div>
+            <div class="slice"></div>
+            <div class="slice"></div>
+            <div class="slice"></div>
+          </div>
+        </div>
+      
+        <div class="content" style="display: none;">
+          
+        
+        <section id="home">
+            <div class="home-content">
+                <div class="home-text">
+                    <div id="typewriter" class="typewriter"></div>
+                    <h1 style="font-size: 2.6rem;">I'm Bikal Ghimire</h1>
+                    <p style="font-size: 1.3rem;">Currently pursuing Aerospace engineering at Mississippi State University.<br> Check out my</p><span id="element"></span>  <!-- Element to contain animated typing -->
+                    <br>
+                    <a href="BIKAL GHIMIRE-Resume.pdf" download="BIKAL GHIMIRE-Resume.pdf" class="download-cv-btn">Download CV</a>
+                </div>
+                <div class="home-image">
+                    <a href="https://www.instagram.com/bikal745?igsh=MTc1ZzVkb3Y5eGVjZg==" target="_blank">
+                        <img src="Profile image.png" alt="Bikal Ghimire">
+                        <span class="follow-text">Follow me on Instagram <br>Mail me @ bikalghimire23@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <hr>
+        <br><br>
+        <section id="projects" class="projects-section">
+            <h2>Projects</h2>
+            <br>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <a href="https://drive.google.com/file/d/1yrcpW9rmvFbDrAbAlU-gZMDlEjf7aLzW/view?usp=sharing" target="_blank"><img src="Drone.jpeg" alt="Wireless Charging Drone Project"></a>
+                    <h3>Wireless Charging Drone Project</h3>
+                    <p>During my high school years, I embarked on an ambitious project to develop a wireless charging drone. This project not only showcased my technical skills and innovative mindset but also highlighted my commitment to finding practical solutions to contemporary technological challenges.</p>
+                    <p style="font-size: 10px;"><br>You can click the image for more details.</i></p>
+                </div>  
+                <div class="project-card">
+                    <a href="https://drive.google.com/drive/folders/1yE1Qp5snZ6C2qLPd0nqt1y2i_1qptqpS?usp=sharing" target="_blank"><img src="AVHC.jpeg" alt="Beam Smart: Adaptive Vehicle Headlight Control."></a>
+                    <h3>Beam Smart: Adaptive Vehicle Headlight Control.</h3>
+                    <p>I am excited to introduce Beam Smart, the innovative solution for safer night driving, which autonomously adjusts headlights to counter the risks of blinding high beams.</p>
+                    <p style="font-size: 10px;"><i>* The picture is AI generated.<br>You can click the image for more details.</i></p>
+                </div>
+                <div class="project-card">
+                    <a href="https://drive.google.com/drive/folders/11TQf6VqpduAcBV-B2YCjSuImmuMaW1Km?usp=sharing" target="_blank"><img src="product page.jpeg.png" alt="Website's Product Page" style="height: 200px; width: auto;"></a>
+                    <h3>Grossory Website: Product page</h3>
+                    <p>I designed a user-friendly product page, inspired by Daraz and Mero Kirana, with clear categories and detailed information to ensure a seamless shopping experience, empowering users to make informed purchasing decisions.</p>
+                    <p style="font-size: 10px;"><i>* This Progect is a Group Project where I build Product Page.<br>You can click the image for more details.</i></p>
+                </div>
+
+                <!-- Add more project cards as needed -->
+            </div>
+        </section>
+        <br>
+        <br>
+        <hr>
+        <br> <br>
+        <!-- --------------acamedics----------- -->
+        <section id="academics" class="projects-section">
+          <h2>Academics</h2>
+          <br>
+          <div class="projects-grid">
+              <div class="project-card">
+                <h3>School</h3>
+                <h4>2021 - something </h4>
+                  <a href="https://www.sajeelal.edu.np/" target="_blank"><img src="Drone.jpeg" alt="Wireless Charging Drone Project"></a>
+                  <h3>Wireless Charging Drone Project</h3>
+                  <p>During my high school years, I embarked on an ambitious project to develop a wireless charging drone. This project not only showcased my technical skills and innovative mindset but also highlighted my commitment to finding practical solutions to contemporary technological challenges.</p>
+                  <p style="font-size: 10px;"><br>You can click the image for more details.</i></p>
+              </div>  
+              <div class="project-card">
+                  <a href="https://drive.google.com/drive/folders/1yE1Qp5snZ6C2qLPd0nqt1y2i_1qptqpS?usp=sharing" target="_blank"><img src="AVHC.jpeg" alt="Beam Smart: Adaptive Vehicle Headlight Control."></a>
+                  <h3>Beam Smart: Adaptive Vehicle Headlight Control.</h3>
+                  <p>I am excited to introduce Beam Smart, the innovative solution for safer night driving, which autonomously adjusts headlights to counter the risks of blinding high beams.</p>
+                  <p style="font-size: 10px;"><i>* The picture is AI generated.<br>You can click the image for more details.</i></p>
+              </div>
+              <div class="project-card">
+                  <a href="https://drive.google.com/drive/folders/11TQf6VqpduAcBV-B2YCjSuImmuMaW1Km?usp=sharing" target="_blank"><img src="product page.jpeg.png" alt="Website's Product Page" style="height: 200px; width: auto;"></a>
+                  <h3>Grossory Website: Product page</h3>
+                  <p>I designed a user-friendly product page, inspired by Daraz and Mero Kirana, with clear categories and detailed information to ensure a seamless shopping experience, empowering users to make informed purchasing decisions.</p>
+                  <p style="font-size: 10px;"><i>* This Progect is a Group Project where I build Product Page.<br>You can click the image for more details.</i></p>
+              </div>
+
+              <!-- Add more project cards as needed -->
+          </div>
+      </section>
+        <br><br>
+        <hr>
+
+        <section id="skills" class="skills-section">
+            <div class="skills-container">
+                <h2>What I Know</h2>
+                <!-- <h3><u>Languages</u></h3> -->
+                <ul class="skills-list">
+                  
+                      <li data-info="High-level programming language for general-purpose programming.">Blender 3D</li>
+                    
+                    
+                    <!-- <li data-info="Style sheet language used for describing the look and formatting of a document written in a markup language.">CSS</li>
+                    <li data-info="Programming language that conforms to the ECMAScript specification.">JavaScript</li> -->
+                </ul>
+                
+                <!-- <h3>Back-end</h3>
+                <ul class="skills-list">
+                    <li data-info="Used for both client-side and server-side programming.">JavaScript</li>
+                    <li data-info="High-level programming language for general-purpose programming.">Python</li>
+                </ul>
+                
+                <h3>Database</h3>
+                <ul class="skills-list">
+                    <li data-info="Relational database management system.">MySQL</li>
+                </ul>
+                
+                <h3>Languages</h3>-->
+                <ul class="skills-list">
+                    <!-- <li data-info="Object-oriented programming language.">Java</li> -->
+                    <li data-info="High-level programming language for general-purpose programming.">Python</li>
+                    <li data-info="Markup language for creating web pages.">HTML</li>
+                    
+                    <!-- <li data-info="General-purpose programming language.">C</li> -->
+
+                </ul>
+                <ul class="skills-list">
+                    <li data-info="Markup language for creating web pages.">Circuit Designing</li>
+                </ul>
+                
+                <!-- <h3>Others</h3> -->
+                <!-- <ul class="skills-list">
+                    <li data-info="Art of capturing light with a camera.">Photography</li>
+                    <li data-info="Network of physical objects embedded with sensors, software, and other technologies.">IoT</li>
+                    <li data-info="Process of capturing moving images.">Videography</li>
+                    <li data-info="Manipulation and arrangement of video shots.">Video Editing</li>
+                </ul>  -->
+            </div>
+            <div id="tooltip" class="tooltip"></div>
+        </section>
+        <hr>
+        <br>
+        <section id="skills-progress">
+            <h2>Skills Proficiency</h2>
+            <div class="skill">
+              <div class="skill-label">
+                  <h3>Blender 3D</h3>
+              </div>
+              <div class="progress-bar">
+                  <div class="progress" style="width: 80%;"></div>
+              </div>
+          </div>
+            <div class="skill">
+                <div class="skill-label">
+                    <h3>HTML</h3>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+ 
+            <!-- <div class="skill">
+                <div class="skill-label">
+                    <h3>Java</h3>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%;"></div>
+                </div>
+            </div> -->
+            <div class="skill">
+                <div class="skill-label">
+                    <h3>Python</h3>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 50%;"></div>
+                </div>
+                
+            </div>
+            <div class="skill">
+              <div class="skill-label">
+                  <h3>Circuit Designing</h3>
+              </div>
+              <div class="progress-bar">
+                  <div class="progress" style="width: 70%;"></div>
+                  
+              </div>
+              <p style="font-size: 10px;"><i>And Still Working on it....</i>
+          </div>
+            <!-- Add more skills as needed </p>-->
+            
+        </section>
+        <br>
+        <hr>
+        <br><br>
+
+        
+        <h2 style="text-align: center;">Honors & Awards</h2>
+        <section id="more-projects">
+            
+            <div class="project-cardd">
+                <h3>7th Young Scientist Summit</h3>
+                <a href="https://www.facebook.com/100016129393562/videos/pcb.1320731315141169/1233925317226078" target="_blank"><img src="certification_of_YSS.jpg" alt="Description of image 1"></a>
+                <p>Young Scientist Summit Winner (February 2023)
+
+                Securing victory at the Young Scientist Summit in February 2023 was a significant milestone in my scientific journey. This achievement reflects my dedication, hard work, and ability to effectively present complex scientific concepts.</p>
+            </div>
+            <div class="project-cardd">
+                <h3>Asia Pacific Conference of Young Scientists 2023</h3>
+               <a href="https://drive.google.com/file/d/1g1egQJaJ_5ilaCQbaEaMmPhcc2oxHf0M/view?usp=sharing" target="_blank"> <img src="certification_of_APCYS.jpg.png" alt="Description of image 2"></a>
+                <p>In November 2023, I had the honor of presenting my research at the Asia Pacific Conference of Young Scientists (APCYS). This international platform enabled me to engage with peers from various countries, gaining invaluable insights into global scientific advancements.</p>
+            </div>
+            <div class="project-cardd">
+                <h3>More to come...</h3>
+                
+                <p>I am working on it...</p>
+                <p style="font-size: 10px;"><i>Stay Tuned</i></p>
+                
+            </div>
+            <!-- Add more project-cardd divs as needed -->
+        </section>  
+        <br>
+        <br>
+        <hr>
+        <br>      
+        
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section contact">
+                <h2>Contact:</h2>
+                <p>Email: <a href="mailto:bikalghimire23@gmail.com" target="_blank">bikalghimire23@gmail.com</a></p>
+                <p>Phone: <a href="tel:+977-9812334083" target="_blank">+977-9812334083</a></p>
+            </div>
+            <div class="footer-section social">
+                <h2>Connect with Me:</h2>
+                <a href="https://www.instagram.com/bikal745?igsh=MTc1ZzVkb3Y5eGVjZg==" target="_blank"><img src="icons8-insta-48.png" alt="Instagram"></a>
+                <a href="www.linkedin.com/in/bikal-ghimire-239b112a5" target="_blank"><img src="icons8-linkedin-48.png" alt="LinkedIn"></a>
+                <a href="https://www.facebook.com/profile.php?id=100070051764197&mibextid=ZbWKwL" target="_blank"><img src="icons8-facebook-48.png" alt="Facebook"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a href="#top" class="back-to-top">Back to Top</a>
+            <p>&copy; 2024 Bikal Ghimire | All rights reserved.</p>
+            <p>Last Update: 4<sup>th</sup> August 2024.</p>
+            <p>V1. 1. 6</p>
+        </div>
+    </div>
+    </footer>
+    
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+        strings: ['Works', 'Projects', "Achievements", "Skills","Certifications","Presentations","Different Research Files","Interests","Education","Hobbies"],
+        typeSpeed: 60,
+        backSpeed: 20,
+        loop: true
+    });
+
+     
+        document.querySelector('.back-to-top').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        document.querySelector('.hamburger-menu').addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Active link highlighting
+    const sections = document.querySelectorAll("section");
+    const navLi = document.querySelectorAll("nav ul li a");
+
+    window.onscroll = () => {
+        let current = "";
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (scrollY >= sectionTop - 60) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLi.forEach(a => {
+            a.classList.remove("active");
+            if (a.getAttribute("href").includes(current)) {
+                a.classList.add("active");
+            }
+        });
+    };
+});
+window.addEventListener('load', function() {
+    setTimeout(function() {
+      document.querySelector('.preloader').style.display = 'none';
+      document.querySelector('.content').style.display = 'block';
+    }, 1500); 
+  });
+    </script>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
